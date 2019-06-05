@@ -4,11 +4,9 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <!--导入属性配置-->
-    <properties resource="dbconfig.properties"></properties>
 
-    <!--指定特定数据库的jdbc驱动jar包的位置-->
-    <classPathEntry location="${jdbc.driverLocation}"/>
+<!--    指定特定数据库的jdbc驱动jar包的位置-->
+    <classPathEntry location="src\main\resources\tools\mysql-connector-java-8.0.16.jar"/>
     <context id="default" targetRuntime="MyBatis3">
 
 <!--    optional，旨在创建class时，对注释进行控制 -->
@@ -19,10 +17,10 @@
         </commentGenerator>
 
 <!--        配置数据库链接信息-->
-        <jdbcConnection driverClass="${jdbc.driverClass}"
-                        connectionURL="${jdbc.jdbcUrl}"
-                        userId="${jdbc.user}"
-                        password="${jdbc.password}">
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.1.116:3306/ssm_crud"
+                        userId="root"
+                        password="123456">
         </jdbcConnection>
 
         <javaTypeResolver >
